@@ -1,0 +1,31 @@
+{
+  "name": "form",
+  "version": "0.1.0",
+  "description": "Form handling for React",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Thibault Lacroux <thibault.lacroux@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "immutable": "^3.8.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "recompose": "^0.26.0",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "flow-bin": "^0.64.0",
+    "jest": "^22.1.4",
+    "react-test-renderer": "^16.2.0"
+  }
+}
