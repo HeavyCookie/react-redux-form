@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 
 export type FormContext = {
   model?: FormModel<*>,
-  action?: (mapping: Array<string | number>, value: string | File) => Object,
+  action?: (mapping: Array<string | number>, value: string | File | boolean) => Object,
   dispatch: (action: { type: string }) => any,
 }
 

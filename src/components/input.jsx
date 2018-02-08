@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react'
-import { fromJS } from 'immutable'
 import { getContext } from 'recompose'
 import { getFieldErrors, getFieldValue } from '../redux/model'
 import type { FormContext } from './form'
@@ -8,12 +7,8 @@ import { Form, contextTypes } from './form'
 import type { FieldProps } from './field-props'
 import { Field } from './field'
 
-type Props = FieldProps & FormContext & {
+type Props = FieldProps & {
   hideOnlyInput?: boolean
-}
-
-const mapStateToProps = (state: Object, props: FieldProps) => {
-  fromJS(state)
 }
 
 export const InputComponent = (props: Props ) => {

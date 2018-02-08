@@ -1,6 +1,7 @@
 // @flow
+import type { FormContext } from './form'
 
-export type FieldProps = {
+export type FieldProps = FormContext & {
   type?: 'text' | 'password' | 'email' | 'file' | 'number' | 'date' | 'radio',
   label?: string,
   placeholder?: string,
@@ -8,7 +9,6 @@ export type FieldProps = {
   value?: any,
   mapping: Array<string | number> | string,
   appendId?: string,
-  update?: Function,
   overrideAction?: Function,
   className?: string,
 }

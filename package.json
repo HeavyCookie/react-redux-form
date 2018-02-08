@@ -1,7 +1,7 @@
 {
-  "name": "form",
+  "name": "@heavycookie/react-redux-forms",
   "version": "0.1.0",
-  "description": "Form handling for React",
+  "description": "Form handling for React & Redux",
   "main": "src/index.js",
   "scripts": {
     "test": "jest"
