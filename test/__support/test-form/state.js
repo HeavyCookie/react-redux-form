@@ -6,4 +6,4 @@ export type TestModel = { value: string }
 
 export type State = Form<TestModel>
 
-export const emptyState = emptyForm({ value: ''})
+export const emptyState = emptyForm({ value: 'Default value'})

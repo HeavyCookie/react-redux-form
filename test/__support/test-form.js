@@ -9,10 +9,10 @@ import { TestForm } from './test-form/view'
 
 export const store = createStore(reducer)
 
-export const TestApp = () => {
-  return (
-    <Provider store={store}>
-      <TestForm />
-    </Provider>
-  )
-}
+export const TestApp = (props: { children: React.Node }) => (
+  <Provider store={store}>
+    <TestForm>
+      {props.children}
+    </TestForm>
+  </Provider>
+)

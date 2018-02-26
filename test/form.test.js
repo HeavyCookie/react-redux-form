@@ -9,11 +9,11 @@ import { Provider, connect } from 'react-redux'
 import { Form } from '../src/components/form'
 import { Input } from '../src/components/input'
 
-const AnotherComponent = (props) => <span>{props.children}</span>
+const AnotherComponent = (props) => (<span>{props.children}</span>)
 
 describe('through multiple levels of components', () => {
-  test('children can read context', () => {
 
+  test('children can read context', () => {
     const form = mount(
       <Provider store={createStore(() => 0)}>
         <Form model={{ data: { myField: 'test' }, errors: {}}} action={() => 0}>
