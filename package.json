@@ -9,12 +9,14 @@
   "author": "Thibault Lacroux <thibault.lacroux@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "immutable": "^3.8.2",
+    "lodash": "^4.17.5",
+    "recompose": "^0.26.0"
+  },
+  "peerDependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
-    "recompose": "^0.26.0",
     "redux": "^3.7.2"
   },
   "devDependencies": {
@@ -26,6 +28,14 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "flow-bin": "^0.66.0",
     "jest": "^22.4.0",
-    "react-test-renderer": "^16.2.0"
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-test-renderer": "^16.2.0",
+    "redux": "^3.7.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/test/__support/setup.js"
   }
 }

@@ -1,5 +1,5 @@
 // @flow
-import { fromJS } from 'immutable'
+import { get } from 'lodash'
 
 export type Errors = $Exact<{[field: string]: Array<string>}> | {}
 
@@ -18,7 +18,7 @@ export const emptyForm = <T>(model: T): Form<T> => ({
  */
 export const getFieldValue = (form: ?Form<*>, field: Array<string | number>) => {
   let value
-  if (form) value = fromJS(form).getIn(['data', ...field])
+  if (form) value = get(form, ['data', ...field])
   if (typeof value === 'undefined') return ''
   return value
 }

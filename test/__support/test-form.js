@@ -1,0 +1,18 @@
+// @flow
+import * as React from 'react'
+import { createStore } from 'redux'
+import type { MapStateToProps } from 'react-redux'
+import { Provider, connect } from 'react-redux'
+
+import reducer from './test-form/reducer'
+import { TestForm } from './test-form/view'
+
+export const store = createStore(reducer)
+
+export const TestApp = () => {
+  return (
+    <Provider store={store}>
+      <TestForm />
+    </Provider>
+  )
+}
