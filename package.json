@@ -4,7 +4,7 @@
   "description": "Form handling for React & Redux",
   "main": "dist/index.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "test": "jest",
