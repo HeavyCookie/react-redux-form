@@ -1,6 +1,5 @@
 // @flow
 import React from 'react'
-import { getContext } from 'recompose'
 import type { FieldProps } from './field-props'
 import { getFieldErrors, getFieldValue } from '../redux/model'
 import { Field } from './field'

@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { compose, withContext } from 'recompose'
 import type { Form as FormModel } from '../redux/model'
 import PropTypes from 'prop-types'
 

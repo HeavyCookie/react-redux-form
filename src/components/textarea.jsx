@@ -1,6 +1,5 @@
 // @flow
 import React from 'react'
-import { getContext } from 'recompose'
 import type { FieldProps } from './field-props'
 import { Field } from './field'
 import { Form, Context } from './form'

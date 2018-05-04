@@ -1,5 +1,5 @@
 // @flow
-import { omit, set } from 'lodash'
+import { fromJS } from 'immutable'
 import type { Errors, Form } from './model'
 
 /**
@@ -14,8 +14,8 @@ export const updateField = (
     ? ['data', field]
     : ['data', ...field]
 
-  if (value != null) return set(form, path.join('.'), value)
-  return omit(form, path.join('.'))
+  if (value != null) return fromJS(form).setIn(path, value).toJS()
+  return fromJS(form).deleteIn(path).toJS()
 }
 
 /**

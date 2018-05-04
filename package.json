@@ -1,6 +1,6 @@
 {
   "name": "@heavycookie/react-redux-form",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Form handling for React & Redux",
   "main": "dist/index.js",
   "scripts": {
@@ -11,8 +11,7 @@
   "author": "Thibault Lacroux <thibault.lacroux@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.10",
-    "recompose": "^0.27.0"
+    "immutable": "^3.8.2"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
