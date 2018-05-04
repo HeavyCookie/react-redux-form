@@ -35,7 +35,7 @@ describe('through multiple levels of components', () => {
       }
     }
     const store = createStore(reducer)
-    const mapStateToProps: MapStateToProps<Object, Object, Object> = s => s
+    const mapStateToProps = s => s
     const ConnectedContainer = connect(mapStateToProps)((props) => (
       <Form model={props} action={() => ({type: 'UPDATE'})}>
         <AnotherComponent>
