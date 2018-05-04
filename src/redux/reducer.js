@@ -14,8 +14,8 @@ export const updateField = (
     ? ['data', field]
     : ['data', ...field]
 
-  if (value != null) return set(form, path, value)
-  return omit(form, path)
+  if (value != null) return set(form, path.join('.'), value)
+  return omit(form, path.join('.'))
 }
 
 /**

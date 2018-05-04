@@ -3,10 +3,12 @@ import React from 'react'
 import { getContext } from 'recompose'
 import type { FieldProps } from './field-props'
 import { Field } from './field'
-import { Form, contextTypes } from './form'
+import { Form, Context } from './form'
 import { getFieldValue, getFieldErrors } from '../redux/model'
 
-export const TextareaComponent = (props: FieldProps & { rows?: string }) => {
+export type Props = FieldProps & { rows?: string }
+
+export const TextareaComponent = (props: Props) => {
   const mapping = (typeof props.mapping === 'string' ? ([props.mapping]) : props.mapping)
   const dashedName = mapping.join('-')
   const value = getFieldValue(props.model, mapping)
@@ -30,4 +32,8 @@ export const TextareaComponent = (props: FieldProps & { rows?: string }) => {
 }
 
 
-export const TextArea = getContext(contextTypes)(TextareaComponent)
+export const TextArea = (props: Props) => (
+  <Context.Consumer>
+    {context => <TextareaComponent {...props} {...context} />}
+  </Context.Consumer>
+)

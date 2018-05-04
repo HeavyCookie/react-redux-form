@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react'
-import type { MapStateToProps } from 'react-redux'
 import { connect } from 'react-redux'
 
 import { Form, Input } from "../../../src/index";
@@ -13,5 +12,5 @@ export const TestFormComponent = (props: { form: State, children: React.Node }) 
   </Form>
 )
 
-export const mapStateToProps: MapStateToProps<State, *, *> = state => ({form: state})
+export const mapStateToProps = (state: State) => ({form: state})
 export const TestForm = connect(mapStateToProps)(TestFormComponent)

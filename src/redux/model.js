@@ -18,7 +18,7 @@ export const emptyForm = <T>(model: T): Form<T> => ({
  */
 export const getFieldValue = (form: ?Form<*>, field: Array<string | number>) => {
   let value
-  if (form) value = get(form, ['data', ...field])
+  if (form) value = get(form, ['data', ...field].join('.'))
   if (typeof value === 'undefined') return ''
   return value
 }

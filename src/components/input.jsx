@@ -1,9 +1,8 @@
 // @flow
 import * as React from 'react'
-import { getContext } from 'recompose'
 import { getFieldErrors, getFieldValue } from '../redux/model'
 import type { FormContext } from './form'
-import { Form, contextTypes } from './form'
+import { Form, Context } from './form'
 import type { FieldProps } from './field-props'
 import { Field } from './field'
 
@@ -46,4 +45,8 @@ export const InputComponent = (props: Props ) => {
   )
 }
 
-export const Input = getContext(contextTypes)(InputComponent)
+export const Input = (props: Props) =>(
+  <Context.Consumer>
+    {context => <InputComponent {...props} {...context} />}
+  </Context.Consumer>
+)

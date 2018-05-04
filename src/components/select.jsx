@@ -4,9 +4,11 @@ import { getContext } from 'recompose'
 import type { FieldProps } from './field-props'
 import { getFieldErrors, getFieldValue } from '../redux/model'
 import { Field } from './field'
-import { Form, contextTypes } from './form'
+import { Form, Context } from './form'
 
-export const SelectComponent = (props: FieldProps & { values: {[key: string | number]: string} }) => {
+type Props = FieldProps & { values: {[key: string | number]: string} }
+
+export const SelectComponent = (props: Props) => {
   const mapping = (typeof props.mapping === 'string' ? ([props.mapping]) : props.mapping)
   const dashedName = mapping.join('-')
   const value = getFieldValue(props.model, mapping)
@@ -32,4 +34,8 @@ export const SelectComponent = (props: FieldProps & { values: {[key: string | nu
   )
 }
 
-export const Select = getContext(contextTypes)(SelectComponent)
+export const Select = (props: Props) => (
+  <Context.Consumer>
+    {context => <SelectComponent {...props} {...context} />}
+  </Context.Consumer>
+)

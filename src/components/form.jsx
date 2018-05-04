@@ -17,31 +17,25 @@ type FormProps = FormContext & {
   onSubmit?: Function,
 }
 
+export const Context = React.createContext({})
+
 const FormComponent = (props: FormProps) => {
   const onSubmit = (event) => {
     event.preventDefault()
     if (props.onSubmit) props.onSubmit()
   }
+
+  const { className, children, ...context } = props
+
   return (
-    <form
-      className={`ui form ${props.className || ''}`}
-      onSubmit={ onSubmit }>
-      { props.children }
-    </form>
+    <Context.Provider value={context}>
+      <form
+        className={`ui form ${className || ''}`}
+        onSubmit={ onSubmit }>
+        { children }
+      </form>
+    </Context.Provider>
   )
 }
 
-export const contextTypes = {
-  model: PropTypes.object,
-  action: PropTypes.func,
-  dispatch: PropTypes.func,
-  onSubmit: PropTypes.func,
-}
-
-export const Form = compose(
-  connect(),
-  withContext(contextTypes, (props: FormProps) => {
-    const { className, children, ...context } = props
-    return { ...context }
-  })
-)(FormComponent)
+export const Form = connect()(FormComponent)

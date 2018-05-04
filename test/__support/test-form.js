@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react'
 import { createStore } from 'redux'
-import type { MapStateToProps } from 'react-redux'
 import { Provider, connect } from 'react-redux'
 
 import reducer from './test-form/reducer'

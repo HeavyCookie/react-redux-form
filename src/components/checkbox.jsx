@@ -1,10 +1,9 @@
 // @flow
 import React from 'react'
-import { getContext } from 'recompose'
 import type { FieldProps } from './field-props'
 import { getFieldErrors, getFieldValue } from '../redux/model'
 import { Field } from './field'
-import { Form, contextTypes } from './form'
+import { Form, Context } from './form'
 
 export const CheckboxComponent = (props: FieldProps) => {
   const mapping = (typeof props.mapping === 'string' ? ([props.mapping]) : props.mapping)
@@ -31,4 +30,8 @@ export const CheckboxComponent = (props: FieldProps) => {
   )
 }
 
-export const Checkbox = getContext(contextTypes)(CheckboxComponent)
+export const Checkbox = (props: FieldProps) => (
+  <Context.Consumer>
+    {context => <CheckboxComponent {...props} {...context} />}
+  </Context.Consumer>
+)
