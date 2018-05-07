@@ -33,7 +33,7 @@ export const TextareaComponent = (props: Props) => {
 }
 
 
-export const TextArea = (props: Props) => (
+export const Textarea = (props: Props) => (
   <Context.Consumer>
     {context => <TextareaComponent {...props} {...context} />}
   </Context.Consumer>
