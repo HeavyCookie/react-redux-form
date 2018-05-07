@@ -1,6 +1,7 @@
 // @flow
 import React from 'react'
 import type { FieldProps } from './field-props'
+import { extractPropsOverride } from './field-props'
 import { getFieldErrors, getFieldValue } from '../redux/model'
 import { Field } from './field'
 import { Form, Context } from './form'
@@ -23,6 +24,7 @@ export const CheckboxComponent = (props: FieldProps) => {
           id={ dashedName }
           checked={ !!value }
           onChange={ update }
+          {...extractPropsOverride(props)}
         />
         { props.label && <label htmlFor={ dashedName }>{ props.label }</label> }
       </div>

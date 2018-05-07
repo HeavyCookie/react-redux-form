@@ -1,6 +1,7 @@
 // @flow
 import React from 'react'
 import type { FieldProps } from './field-props'
+import { extractPropsOverride } from './field-props'
 import { Field } from './field'
 import { Form, Context } from './form'
 import { getFieldValue, getFieldErrors } from '../redux/model'
@@ -25,7 +26,8 @@ export const TextareaComponent = (props: Props) => {
         rows={ props.rows }
         id={ dashedName }
         value={ value }
-        onChange={ props.overrideAction || update } />
+        onChange={ props.overrideAction || update }
+        {...extractPropsOverride(props)}/>
     </Field>
   )
 }

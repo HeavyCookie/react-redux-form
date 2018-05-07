@@ -1,6 +1,7 @@
 // @flow
 import React from 'react'
 import type { FieldProps } from './field-props'
+import { extractPropsOverride } from './field-props'
 import { getFieldErrors, getFieldValue } from '../redux/model'
 import { Field } from './field'
 import { Form, Context } from './form'
@@ -21,7 +22,7 @@ export const SelectComponent = (props: Props) => {
     <Field errors={ errors } className={ props.className }>
       { props.label && <label htmlFor={ dashedName }>{ props.label }</label> }
       <select id={ dashedName } onChange={ update } value={ value || undefined }
-        defaultValue={ props.placeholder }>
+        defaultValue={ props.placeholder } {...extractPropsOverride(props)}>
         { props.placeholder &&
           <option value={ props.placeholder } disabled>{ props.placeholder }</option>
         }

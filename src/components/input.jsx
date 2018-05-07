@@ -4,6 +4,7 @@ import { getFieldErrors, getFieldValue } from '../redux/model'
 import type { FormContext } from './form'
 import { Form, Context } from './form'
 import type { FieldProps } from './field-props'
+import { extractPropsOverride } from './field-props'
 import { Field } from './field'
 
 type Props = FieldProps & {
@@ -40,6 +41,7 @@ export const InputComponent = (props: Props ) => {
         value={ props.type !== 'file' ? props.value || value || '' : undefined }
         onChange={ props.overrideAction || update }
         disabled={ props.disabled }
+        {...extractPropsOverride(props)}
       />
     </Field>
   )
