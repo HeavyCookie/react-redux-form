@@ -1,4 +1,12 @@
 language: node_js
 node_js:
-  - "8"
-  - "9"
+- '8'
+- '9'
+deploy:
+  provider: npm
+  email: thibault.lacroux@gmail.com
+  api_key:
+    secure: vastk5weo3+Z3rmO3rKKs8lEbcToFq3PS91HVDycw652uo6yZBmNElnFrB9lhvRQBaNkJuQSQ4noQBBvbGF82pEWhlcUOjkFfOsZQHVKMVsunMGhKT7zDG1LsvUje5elBlrhTEwpcT4BeTfIKpX1MtYSukVG0HQNvZJqmKTRYdMP6Eo22CErUA7l00GMcE110lofqII0Y3PDuoIfwak3gn7xHFR3PUbgepzcWnqlSs22fWkDY1+4yARgcwoeB4KFeJ5J7yC7GknghFSZfe5EAMgwkhyk4LTiEuXf4bOOWJvMhbeMUB6H5frwY51gOKCUj7VP6KIGIzFdVPLc+wHbdUdE05pFtdnsdF+qwAfZYvO18ICFMDy3ey1c5Zwi0LQHz2Yx1MjcU0jI/yvrMW99YB+wKlL5SiIoArYVpezN5ibYzFzDy6UrGUnzKGrkP1ZD1mWbl5VlGMCeMsP5dbrGMr2zYw5rVWkJUuWexFFnKxQia/4ebtJ2NdpVXbPo5PwqwFX7cDKwkD5yozkuywYy1px7v9lHAJCyXT0pF9vKTFHL8L0Fp3UKMi10zpyQcBEFcLKzWoljHThnw/L9lsw9ZUAIY3dV1v5nWoJk/YHvS2dlkY9YGOnfKLoRUkaVBKi6QiZFM8sNBfHCs5mQBEDPBhlwods0MNAc8/G0xAXPJyw=
+  on:
+    tags: true
+    repo: HeavyCookie/react-redux-form
