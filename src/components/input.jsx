@@ -8,7 +8,8 @@ import { extractPropsOverride } from './field-props'
 import { Field } from './field'
 
 type Props = FieldProps & {
-  hideOnlyInput?: boolean
+  type?: 'text' | 'password' | 'email' | 'file' | 'number' | 'date' | 'radio',
+  hideOnlyInput?: boolean,
 }
 
 export const InputComponent = (props: Props ) => {
