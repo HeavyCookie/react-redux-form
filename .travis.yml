@@ -1,6 +1,10 @@
 language: node_js
+
 node_js:
 - '10'
+
+skip_cleanup: true
+
 deploy:
   provider: npm
   email: thibault.lacroux@gmail.com
