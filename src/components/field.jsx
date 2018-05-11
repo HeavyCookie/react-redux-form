@@ -1,5 +1,23 @@
 // @flow
 import * as React from 'react'
+import type { FormContext } from './form'
+import { Context } from './form'
+
+export const FieldErrors = ({ errors }: { errors: any }) =>
+  (errors && errors.length > 0 ? (
+    <div className="errors">
+      <Context.Consumer>
+        {(context) => {
+          const listErrors = context.errorHandler
+            ? errors.map(context.errorHandler)
+            : errors
+
+          return listErrors.join(', ')
+          }
+        }
+      </Context.Consumer>
+    </div>
+  ) : null)
 
 export const Field =
   (props: { errors: Array<string>, children: React.Node, className?: string }) => {
@@ -12,7 +30,7 @@ export const Field =
     return (
       <div className={ classes.join(' ') }>
         { props.children }
-        {props.errors}
+        <FieldErrors errors={props.errors} />
       </div>
     )
   }
