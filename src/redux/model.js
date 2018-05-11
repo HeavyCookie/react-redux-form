@@ -27,9 +27,9 @@ export const getFieldValue = (form: ?Form<*>, field: Array<string | number>) => 
  * Return errors of a field
  */
 export const getFieldErrors =
-  (form: ?Form<*>, field: Array<string | number>): Array<string> => {
+  (form: ?Form<*>, field: Array<string | number>): any => {
     if (form) {
-      return form.errors[field.join('.')] || []
+      return form.errors[field.join('.')]
     }
-    return []
+    return null
   }

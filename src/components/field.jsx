@@ -4,15 +4,17 @@ import type { FormContext } from './form'
 import { Context } from './form'
 
 export const FieldErrors = ({ errors }: { errors: any }) =>
-  (errors && errors.length > 0 ? (
+  (!!errors ? (
     <div className="errors">
       <Context.Consumer>
         {(context) => {
           const listErrors = context.errorHandler
-            ? errors.map(context.errorHandler)
-            : errors
+            ? context.errorHandler(errors)
+            : (errors instanceof Array
+              ? errors.toString()
+              : JSON.stringify(errors))
 
-          return listErrors.join(', ')
+          return listErrors
           }
         }
       </Context.Consumer>
@@ -20,8 +22,8 @@ export const FieldErrors = ({ errors }: { errors: any }) =>
   ) : null)
 
 export const Field =
-  (props: { errors: Array<string>, children: React.Node, className?: string }) => {
-    const hasErrors = props.errors.length > 0
+  (props: { errors: any, children: React.Node, className?: string }) => {
+    const hasErrors = props.errors != null
 
     let classes = ['field']
     if (hasErrors) classes = [...classes, 'error']
