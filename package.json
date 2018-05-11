@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "babel src --out-dir ./",
-    "prepublishOnly": "yarn test && yarn build"
+    "prepublishOnly": "yarn install && yarn test && yarn build"
   },
   "author": "Thibault Lacroux <thibault.lacroux@gmail.com>",
   "license": "ISC",
