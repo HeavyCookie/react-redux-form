@@ -14,6 +14,7 @@ export type FieldProps = FormContext & {
 
 export const extractPropsOverride = (props: FieldProps): {} => {
   const { model, action, dispatch, label, placeholder, disabled, value,
-    mapping, appendId, overrideAction, className, ...override } = props
+    mapping, appendId, overrideAction, className, errorHandler,
+    ...override } = props
   return override
 }

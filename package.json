@@ -1,6 +1,6 @@
 {
   "name": "@heavycookie/react-redux-form",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Form handling for React & Redux",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-redux": "^5.0.7",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2 || ^4.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
