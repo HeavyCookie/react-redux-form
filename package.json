@@ -1,6 +1,6 @@
 {
   "name": "@heavycookie/react-redux-form",
-  "version": "0.1.10",
+  "version": "0.2.0",
   "description": "Form handling for React & Redux",
   "main": "index.js",
   "scripts": {
@@ -20,25 +20,26 @@
     "redux": "^3.7.2 || ^4.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-jest": "^22.4.3",
-    "babel-loader": "^7.1.4",
+    "babel-jest": "^23.2.0",
+    "babel-loader": "^7.1.5",
     "babel-plugin-transform-flow-comments": "^6.22.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "enzyme-context-patch": "^0.0.7",
-    "flow-bin": "^0.71.0",
-    "jest": "^22.4.3",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "enzyme-context-patch": "^0.0.8",
+    "flow-bin": "^0.76.0",
+    "jest": "^23.3.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
-    "react-test-renderer": "^16.3.2",
+    "react-test-renderer": "^16.4.1",
     "redux": "^4.0.0",
-    "yarn": "^1.6.0"
+    "yarn": "^1.7.0"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test/__support/setup.js"
